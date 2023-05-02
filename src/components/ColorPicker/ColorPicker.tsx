@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import Compact from '@uiw/react-color-compact';
+// import Compact from '@uiw/react-color-compact';
 import Popper from '@mui/material/Popper';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
@@ -12,7 +12,6 @@ import {ColorPickerProps} from "../types";
 const ColorPicker: FC<ColorPickerProps> = ({title, icon, onChange}) => {
     const [hex, setHex] = useState("#fff");
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-    console.log(hex);
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget);
@@ -62,14 +61,16 @@ const ColorPicker: FC<ColorPickerProps> = ({title, icon, onChange}) => {
                                 //     mt: 1.5
                                 // }}
                             >
-                                <Compact
-                                    color={hex}
-                                    onChange={(color) => {
-                                        setHex(color.hex);
-                                        onChange(color.hex);
-                                        handleClose();
-                                    }}
-                                />
+                                <div>ColorPicker</div>
+                                {/*<Compact*/}
+                                {/*    color={hex}*/}
+                                {/*    onChange={(color) => {*/}
+                                {/*        // @ts-ignore*/}
+                                {/*        setHex(color.hex);*/}
+                                {/*        onChange(color.hex);*/}
+                                {/*        handleClose();*/}
+                                {/*    }}*/}
+                                {/*/>*/}
                             </Paper>
                         </Fade>
                     </ClickAwayListener>
