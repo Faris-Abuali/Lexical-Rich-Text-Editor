@@ -1,5 +1,5 @@
-import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
 import {useCallback} from "react";
+import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
 import {$getSelection, $isRangeSelection} from "lexical";
 import {$patchStyleText} from "@lexical/selection";
 

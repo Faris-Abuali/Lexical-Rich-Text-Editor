@@ -46,7 +46,7 @@ const Toolbar: FC<ToolbarProps> = ({editable}) => {
             clearEditorContent();
     }
 
-    const {onFontColorSelect, onBgColorSelect} = useColorPicker();
+    const {onFontColorSelect, onBgColorSelect } = useColorPicker();
 
     if (!editable) return null;
 
@@ -117,7 +117,10 @@ const Toolbar: FC<ToolbarProps> = ({editable}) => {
             <ColorPicker
                 key="color-picker"
                 title="Font color"
-                onChange={(color) => onFontColorSelect(color)}
+                onChange={(color) => {
+                    console.log(color);
+                    onFontColorSelect(color)
+                }}
                 icon={<ColorLensIcon/>}
             />
             <ColorPicker
