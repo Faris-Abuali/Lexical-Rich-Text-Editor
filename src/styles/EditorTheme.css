@@ -1,13 +1,17 @@
 .ltr {
     text-align: left;
 }
+
 .rtl {
     text-align: right;
 }
+
 .paragraph {
-    margin: 0;
     position: relative;
+    display: block;
+    margin: 1em 0;
 }
+
 .quote {
     margin: 0;
     margin-left: 20px;
@@ -19,68 +23,103 @@
     border-left-style: solid;
     padding-left: 16px;
 }
+
 .h1 {
-    font-size: 24px;
-    color: rgb(5, 5, 5);
-    font-weight: 400;
-    margin: 0;
+    display: block;
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
 }
+
 .h2 {
-    font-size: 15px;
-    color: rgb(101, 103, 107);
-    font-weight: 700;
-    margin: 0;
-    text-transform: uppercase;
+    display: block;
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    font-weight: bold;
 }
+
 .h3 {
-    font-size: 12px;
-    margin: 0;
-    text-transform: uppercase;
+    display: block;
+    font-size: 1.17em;
+    margin: 1em 0;
+    font-weight: bold;
 }
+
+.h4 {
+    display: block;
+    margin: 1.33em 0;
+    font-weight: bold;
+}
+
+.h5 {
+    display: block;
+    font-size: .83em;
+    margin: 1.67em 0;
+}
+
+.h6 {
+    display: block;
+    font-size: .67em;
+    margin: 2.33em 0;
+    font-weight: bold;
+}
+
 .indent {
     --lexical-indent-base-value: 20px;
 }
+
 .textBold {
     font-weight: bold;
 }
+
 .textItalic {
     font-style: italic;
 }
+
 .textUnderline {
     text-decoration: underline;
 }
+
 .textStrikethrough {
     text-decoration: line-through;
 }
+
 .textUnderlineStrikethrough {
     text-decoration: underline line-through;
 }
+
 .textSubscript {
     font-size: 0.8em;
     vertical-align: sub !important;
 }
+
 .textSuperscript {
     font-size: 0.8em;
     vertical-align: super;
 }
+
 .textCode {
     background-color: rgb(240, 242, 245);
     padding: 1px 0.25rem;
     font-family: Menlo, Consolas, Monaco, monospace;
     font-size: 94%;
 }
+
 .hashtag {
     background-color: rgba(88, 144, 255, 0.15);
     border-bottom: 1px solid rgba(88, 144, 255, 0.3);
 }
+
 .link {
     color: rgb(33, 111, 219);
     text-decoration: none;
 }
+
 .link:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
 .code {
     background-color: rgb(240, 242, 245);
     font-family: Menlo, Consolas, Monaco, monospace;
@@ -96,6 +135,7 @@
     overflow-x: auto;
     position: relative;
 }
+
 .code::before {
     content: attr(data-gutter);
     position: absolute;
@@ -109,6 +149,7 @@
     text-align: right;
     min-width: 25px;
 }
+
 /*.table {*/
 /*    border-collapse: collapse;*/
 /*    border-spacing: 0;*/
@@ -269,43 +310,51 @@
     display: inline;
     background-color: #ffbbbb !important;
 }
+
 .ol1 {
     padding: 0;
     margin: 0;
     list-style-position: inside;
 }
+
 .ol2 {
     padding: 0;
     margin: 0;
     list-style-type: upper-alpha;
     list-style-position: inside;
 }
+
 .ol3 {
     padding: 0;
     margin: 0;
     list-style-type: lower-alpha;
     list-style-position: inside;
 }
+
 .ol4 {
     padding: 0;
     margin: 0;
     list-style-type: upper-roman;
     list-style-position: inside;
 }
+
 .ol5 {
     padding: 0;
     margin: 0;
     list-style-type: lower-roman;
     list-style-position: inside;
 }
+
 .ul {
     padding: 0;
     margin: 0;
     list-style-position: inside;
 }
+
 .listItem {
     margin: 0 32px;
 }
+
 .listItemChecked,
 .listItemUnchecked {
     position: relative;
@@ -316,9 +365,11 @@
     list-style-type: none;
     outline: none;
 }
+
 .listItemChecked {
     text-decoration: line-through;
 }
+
 .listItemUnchecked::before,
 .listItemChecked::before {
     content: '';
@@ -331,26 +382,31 @@
     background-size: cover;
     position: absolute;
 }
+
 .listItemUnchecked[dir='rtl']::before,
 .listItemChecked[dir='rtl']::before {
     left: auto;
     right: 0;
 }
+
 .listItemUnchecked:focus::before,
 .listItemChecked:focus::before {
     box-shadow: 0 0 0 2px #a6cdfe;
     border-radius: 2px;
 }
+
 .listItemUnchecked::before {
     border: 1px solid #999;
     border-radius: 2px;
 }
+
 .listItemChecked::before {
     border: 1px solid rgb(61, 135, 245);
     border-radius: 2px;
     background-color: #3d87f5;
     background-repeat: no-repeat;
 }
+
 .listItemChecked::after {
     content: '';
     cursor: pointer;
@@ -366,57 +422,73 @@
     transform: rotate(45deg);
     border-width: 0 2px 2px 0;
 }
+
 .nestedListItem {
     list-style-type: none;
 }
+
 .nestedListItem::before,
 .nestedListItem::after {
     display: none;
 }
+
 .tokenComment {
     color: slategray;
 }
+
 .tokenPunctuation {
     color: #999;
 }
+
 .tokenProperty {
     color: #905;
 }
+
 .tokenSelector {
     color: #690;
 }
+
 .tokenOperator {
     color: #9a6e3a;
 }
+
 .tokenAttr {
     color: #07a;
 }
+
 .tokenVariable {
     color: #e90;
 }
+
 .tokenFunction {
     color: #dd4a68;
 }
+
 .mark {
     background: rgba(255, 212, 0, 0.14);
     border-bottom: 2px solid rgba(255, 212, 0, 0.3);
     padding-bottom: 2px;
 }
+
 .markOverlap {
     background: rgba(255, 212, 0, 0.3);
     border-bottom: 2px solid rgba(255, 212, 0, 0.7);
 }
+
 .mark.selected {
     background: rgba(255, 212, 0, 0.5);
     border-bottom: 2px solid rgba(255, 212, 0, 1);
 }
+
 .markOverlap.selected {
     background: rgba(255, 212, 0, 0.7);
     border-bottom: 2px solid rgba(255, 212, 0, 0.7);
 }
+
 .embedBlock {
     user-select: none;
 }
+
 .embedBlockFocus {
     outline: 2px solid rgb(60, 132, 244);
 }
