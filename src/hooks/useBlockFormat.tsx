@@ -1,39 +1,28 @@
-import {MouseEventHandler, ReactElement, useState} from "react";
+import {ReactElement} from "react";
 import {$createParagraphNode, $getSelection, $isRangeSelection, DEPRECATED_$isGridSelection} from "lexical";
 import {$setBlocksType_experimental} from "@lexical/selection";
 import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
 import {
     $createHeadingNode,
     $createQuoteNode,
-    $isHeadingNode,
     HeadingTagType,
 } from '@lexical/rich-text';
 import {blockTypeToBlockName} from "src/constants";
 import {
-    $isListNode,
     INSERT_CHECK_LIST_COMMAND,
     INSERT_ORDERED_LIST_COMMAND,
     INSERT_UNORDERED_LIST_COMMAND,
-    ListNode,
     REMOVE_LIST_COMMAND,
 } from '@lexical/list';
-import {SvgIcon} from "@mui/material";
-import LocalParkingOutlinedIcon from "@mui/icons-material/LocalParkingOutlined";
 import NotesIcon from '@mui/icons-material/Notes';
 import TitleIcon from '@mui/icons-material/Title';
-import HMobiledataOutlinedIcon from "@mui/icons-material/HMobiledataOutlined";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import FormatListNumberedOutlinedIcon from "@mui/icons-material/FormatListNumberedOutlined";
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import {$createCodeNode} from "@lexical/code";
-import { SvgIconProps } from '@mui/material/SvgIcon';
-
-interface UseBlockFormatProps {
-    blockType: keyof typeof blockTypeToBlockName;
-}
-
+import {UseBlockFormatProps} from "../types";
 
 const useBlockFormat = (props: UseBlockFormatProps) => {
     const {blockType} = props;
@@ -147,7 +136,6 @@ const useBlockFormat = (props: UseBlockFormatProps) => {
             name: 'Normal',
             blockType: 'paragraph',
             icon: <NotesIcon/>,
-            // onClick: () => formatParagraph(),
             onClick: formatParagraph,
         },
         {

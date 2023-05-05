@@ -26,8 +26,8 @@ import useEditorToolbar from "src/hooks/useEditorToolbar";
 import useCustomCommands from "src/hooks/useCustomCommands";
 import useColorPicker from "src/hooks/useColorPicker";
 import useStyles from "./styles";
-import {getActiveBtnStyle} from "../utils";
-import {ToolbarProps} from "../types";
+import {getActiveBtnStyle} from "../../utils";
+import {ToolbarProps} from "../../types";
 
 const Toolbar: FC<ToolbarProps> = ({editable}) => {
     const classes = useStyles();
@@ -117,10 +117,7 @@ const Toolbar: FC<ToolbarProps> = ({editable}) => {
             <ColorPicker
                 key="color-picker"
                 title="Font color"
-                onChange={(color) => {
-                    console.log(color);
-                    onFontColorSelect(color)
-                }}
+                onChange={(color) => onFontColorSelect(color)}
                 icon={<ColorLensIcon/>}
             />
             <ColorPicker

@@ -1,11 +1,7 @@
 import { useCallback, useEffect, FC } from 'react';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-
 import debounce from '../utils/debounce';
-
-type LocalStoragePluginProps = {
-    namespace: string;
-};
+import {LocalStoragePluginProps} from "../types";
 
 /**
  * We have extended our editor so that it stores our content safely in an external store, utilizing the concept of Lexical’s editor state.
@@ -26,12 +22,12 @@ const LocalStoragePlugin: FC<LocalStoragePluginProps> = ({ namespace }) => {
     useEffect(() => {
         return editor.registerUpdateListener(
             ({ editorState, dirtyElements, dirtyLeaves }) => {
-                // Don't update if nothing changed
+                // Don't update if nothing has changed
                 if (dirtyElements.size === 0 && dirtyLeaves.size === 0) return;
 
                 const serializedState = JSON.stringify(editorState);
                 debouncedSaveContent(serializedState);
-            }
+            },
         );
 
         /**

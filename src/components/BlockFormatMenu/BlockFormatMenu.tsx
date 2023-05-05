@@ -7,8 +7,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import useBlockFormat from "../../hooks/useBlockFormat";
 import {blockTypeToBlockName} from "src/constants";
 import {useMediaQuery} from "@mui/material";
-import {getMenuButtonStyle} from "@r365/components/utils";
-import {BlockFormatMenuProps} from "../types";
+import {getMenuButtonStyle} from "../../utils";
+import {BlockFormatMenuProps} from "../../types";
 
 const BlockFormatMenu: FC<BlockFormatMenuProps> = ({blockType}) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

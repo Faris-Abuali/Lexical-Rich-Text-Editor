@@ -4,9 +4,9 @@
     "rootDir": "src",
     "outDir": "build/dist",
     "paths": {
-      "@r365/*": [
-        "src/*"
-      ]
+      // "@r365/*": [
+      //   "src/*"
+      // ]
     },
     "module": "esnext",
     "target": "ESNext",

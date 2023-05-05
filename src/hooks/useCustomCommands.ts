@@ -1,12 +1,6 @@
 import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
 import {$createParagraphNode, $getRoot, COMMAND_PRIORITY_LOW, createCommand, LexicalCommand} from "lexical";
-
-interface UseCustomCommandsProps {
-}
-
-interface UseCustomCommandsReturn {
-    clearEditorContent: () => void;
-}
+import {UseCustomCommandsReturn} from "../types";
 
 const useCustomCommands = (): UseCustomCommandsReturn => {
 

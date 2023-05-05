@@ -2,15 +2,15 @@ import React, {FC, MouseEvent, useState} from 'react';
 import Button from "@mui/material/Button";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Menu from "@mui/material/Menu";
-import {formatMenuItems} from "src/components/constants";
+import {formatMenuItems} from "../../constants";
 import MenuItem from "@mui/material/MenuItem";
 import {FORMAT_TEXT_COMMAND, TextFormatType} from "lexical";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
 import TextFormatIcon from '@mui/icons-material/TextFormat';
 import {useMediaQuery} from "@mui/material";
-import {getMenuButtonStyle} from "src/components/utils";
-import {FormatTextMenuProps} from "../types";
+import {getMenuButtonStyle} from "../../utils";
+import {FormatTextMenuProps} from "../../types";
 
 const FormatTextMenu: FC<FormatTextMenuProps> = ({hasFormat}) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

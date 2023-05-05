@@ -13,23 +13,23 @@ import {HorizontalRulePlugin} from '@lexical/react/LexicalHorizontalRulePlugin';
 import {ListPlugin} from '@lexical/react/LexicalListPlugin';
 import {CheckListPlugin} from '@lexical/react/LexicalCheckListPlugin';
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import Toolbar from "@r365/components/Toolbar";
-import LocalStoragePlugin from "@r365/plugins/LocalStoragePlugin";
+import Toolbar from "src/components/Toolbar";
+import LocalStoragePlugin from "src/plugins/LocalStoragePlugin";
+import TreeViewPlugin from 'src/plugins/TreeViewPlugin';
 import Stack from "@mui/material/Stack";
-// import Placeholder from "./Placeholder";
-import Placeholder from "../../components/Placeholder";
-import CodeHighlightPlugin from '@r365/plugins/CodeHighlightPlugin';
-import {initialConfig} from "./constants";
+import Placeholder from "../components/Placeholder";
+import CodeHighlightPlugin from 'src/plugins/CodeHighlightPlugin';
+import {initialConfig} from "../constants";
 import useStyles from "./styles";
 
-const onChange = (editorState: EditorState) => {
+const handleChange = (editorState: EditorState) => {
     editorState.read(() => {
         const root = $getRoot();
         const selection = $getSelection();
     });
 }
 
-export const RocketEditor = () => {
+export const RichTextEditor = () => {
     // we retrieved the content from local storage in the Editor component
     const content = localStorage.getItem(initialConfig.namespace);
 
@@ -47,16 +47,16 @@ export const RocketEditor = () => {
                     ErrorBoundary={LexicalErrorBoundary}
                 />
                 <CodeHighlightPlugin />
-                <OnChangePlugin onChange={onChange}/>
+                <OnChangePlugin onChange={handleChange}/>
                 <HistoryPlugin/>
                 <LocalStoragePlugin namespace={initialConfig.namespace}/>
                 <ListPlugin/>
                 <HorizontalRulePlugin />
                 <CheckListPlugin/>
-                {/*<MarkdownShortcutPlugin transformers={TRANSFORMERS}/>*/}
             </Stack>
+            {/* {false && <TreeViewPlugin />} */}
         </LexicalComposer>
     )
 }
 
-export default RocketEditor;
+export default RichTextEditor;

@@ -6,10 +6,10 @@ import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import {FORMAT_ELEMENT_COMMAND} from "lexical";
 import {useLexicalComposerContext} from "@lexical/react/LexicalComposerContext";
-import {alignMenuItems} from "../constants";
+import {alignMenuItems} from "../../constants";
 import AlignHorizontalLeftIcon from "@mui/icons-material/AlignHorizontalLeft";
 import { useMediaQuery } from '@mui/material';
-import {getMenuButtonStyle} from "../utils";
+import {getMenuButtonStyle} from "../../utils";
 
 const AlignMenu: FC = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

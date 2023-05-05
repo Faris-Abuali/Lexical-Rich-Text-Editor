@@ -2,9 +2,7 @@ import React, { FC } from 'react';
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { TreeView } from "@lexical/react/LexicalTreeView";
 
-interface TreeViewPluginProps {}
-
-const TreeViewPlugin: FC<TreeViewPluginProps> = (props) => {
+const TreeViewPlugin: FC = () => {
     const [editor] = useLexicalComposerContext();
     return (
         <TreeView

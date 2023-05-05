@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Box from '@mui/material/Box';
-import {PlaceholderProps} from "../types";
+import {PlaceholderProps} from "../../types";
 
 const Placeholder: FC<PlaceholderProps> = ({className, children,}) => {
 

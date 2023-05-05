@@ -14,21 +14,5 @@ const debounce = <F extends DebouncedFunctionType>(
     } as F;
 }
 
-// debounce(() => console.log("FaRIS"), 1000);
 
 export default debounce;
-
-/**
- *     const debouncedSaveContent = debounce(saveContent, 500);
- *
- *     useEffect(() => {
- *         return editor.registerUpdateListener(
- *             ({ editorState, dirtyElements, dirtyLeaves }) => {
- *                 // Don't update if nothing changed
- *                 if (dirtyElements.size === 0 && dirtyLeaves.size === 0) return;
- *
- *                 const serializedState = JSON.stringify(editorState);
- *                 debouncedSaveContent(serializedState);
- *             }
- *         );
- */

@@ -1,19 +1,16 @@
 import React, { FC, useEffect } from 'react';
+import {registerCodeHighlighting} from '@lexical/code';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 
-interface AutoFocusProps {}
-
-
-const AutoFocus: FC<AutoFocusProps> = (props) => {
+const CodeHighlightPlugin: FC = () => {
 
     const [editor] = useLexicalComposerContext();
 
     useEffect(() => {
-        // Focus the editor when the effect fires!
-        editor.focus();
+        return registerCodeHighlighting(editor);
     }, [editor]);
 
     return null;
 };
 
-export default AutoFocus;
+export default CodeHighlightPlugin;

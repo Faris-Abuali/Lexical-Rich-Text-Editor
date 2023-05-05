@@ -16,7 +16,7 @@ import {INSERT_HORIZONTAL_RULE_COMMAND} from '@lexical/react/LexicalHorizontalRu
 import {$selectAll} from '@lexical/selection';
 import {$isHeadingNode} from '@lexical/rich-text';
 import {$isCodeNode, CODE_LANGUAGE_MAP} from '@lexical/code';
-import {getSelectedNode} from "src/utils/getSelectedNode";
+import getSelectedNode from "../utils/getSelectedNode";
 
 
 const useEditorToolbar = () => {
@@ -24,20 +24,10 @@ const useEditorToolbar = () => {
     const [editor] = useLexicalComposerContext();
 
     const [hasFormat, setHasFormat] = useState<Record<TextFormatType, boolean>>(initialHasFormat);
-    // const [isBold, setIsBold] = useState(false);
-    // const [isItalic, setIsItalic] = useState(false);
-    // const [isStrikethrough, setIsStrikethrough] = useState(false);
-    // const [isUnderline, setIsUnderline] = useState(false);
-    // const [isSubscript, setIsSubscript] = useState(false);
-    // const [isSuperscript, setIsSuperscript] = useState(false);
-    // const [isCode, setIsCode] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(false);
-    const [blockType, setBlockType] =
-        useState<keyof typeof blockTypeToBlockName>('paragraph');
-    const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(
-        null,
-    );
-    const [codeLanguage, setCodeLanguage] = useState<string>('');
+    const [blockType, setBlockType] = useState<keyof typeof blockTypeToBlockName>('paragraph');
+    const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(null);
+    const [codeLanguage, setCodeLanguage] = useState<string>("");
     const [isLink, setIsLink] = useState(false);
 
 
@@ -46,7 +36,6 @@ const useEditorToolbar = () => {
         const selection = $getSelection();
 
         if ($isRangeSelection(selection)) {
-            // TODO: Check if this is actually needed
             const anchorNode = selection.anchor.getNode();
             let element =
                 anchorNode.getKey() === 'root'
@@ -73,14 +62,6 @@ const useEditorToolbar = () => {
                 code: selection.hasFormat('code'),
                 highlight: selection.hasFormat('highlight'),
             });
-            // setIsBold(selection.hasFormat('bold'));
-            // setIsItalic(selection.hasFormat('italic'));
-            // setIsUnderline(selection.hasFormat('underline'));
-            // setIsStrikethrough(selection.hasFormat('strikethrough'));
-            // setIsSubscript(selection.hasFormat('subscript'));
-            // setIsSuperscript(selection.hasFormat('superscript'));
-            // setIsCode(selection.hasFormat('code'));
-            // setIsRTL($isParentElementRTL(selection));
 
             // Update links
             const node = getSelectedNode(selection);
@@ -192,10 +173,6 @@ const useEditorToolbar = () => {
     }, [editor]);
 
     return {
-        // isBold,
-        // isItalic,
-        // isStrikethrough,
-        // isUnderline,
         hasFormat,
         isEditorEmpty,
         blockType,

@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import AddIcon from '@mui/icons-material/Add';
 import useInsertMenu from "../../hooks/useInsertMenu";
-import {getMenuButtonStyle} from "@r365/components/utils";
+import {getMenuButtonStyle} from "../../utils";
 import {useMediaQuery} from "@mui/material";
 
 const InsertMenu: FC = () => {

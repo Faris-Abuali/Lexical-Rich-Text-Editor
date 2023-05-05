@@ -6,7 +6,7 @@ import Fade from '@mui/material/Fade';
 import Paper from '@mui/material/Paper';
 import Badge from '@mui/material/Badge';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import {ColorPickerProps} from "../types";
+import {ColorPickerProps} from "../../types";
 
 const ColorPicker: FC<ColorPickerProps> = ({title, icon, onChange}) => {
     const [hex, setHex] = useState("#fff");

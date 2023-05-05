@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
 import "./App.css";
-import RocketEditor from "src/pages/RocketEditor/RocketEditor";
+import RichTextEditor from "./pages/RichTextEditor";
 
-interface AppProps {}
-
-const App: FC<AppProps> = (props) => {
+const App: FC = () => {
 
   return (
-      <RocketEditor />
+    <RichTextEditor />
   );
 };
 

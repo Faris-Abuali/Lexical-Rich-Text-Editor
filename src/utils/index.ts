@@ -1,11 +1,7 @@
 import {SxProps, Theme} from "@mui/material";
 import {blueGrey} from "@mui/material/colors";
 import {grey} from "@mui/material/colors";
-
-interface IMenuButtonStyle {
-    open: boolean;
-    isMdViewport: boolean;
-}
+import {IMenuButtonStyle} from "../types";
 
 export const getMenuButtonStyle = ({open, isMdViewport}: IMenuButtonStyle): SxProps => ({
     color: "grey.600",
