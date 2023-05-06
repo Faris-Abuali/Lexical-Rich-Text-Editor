@@ -1,6 +1,7 @@
 # Lexical-Rich-Text-Editor
 I tried to design my first rich text editor making use of Facebook's new open-source text editor framework - Lexical.
 
+https://faris-abuali.github.io/Lexical-Rich-Text-Editor/
 
 <img width="951" alt="image" src="https://user-images.githubusercontent.com/54215462/235560243-8a24315b-8282-4151-80a1-e0f06f4c4014.png">
 
